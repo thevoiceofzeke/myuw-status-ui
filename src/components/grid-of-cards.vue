@@ -32,7 +32,7 @@ export default {
     //   JSON file of apps and their /status urls
     getStatuses: function() {
       // var vm = this;
-      this.$http.get('http://localhost:8080/demo-statuses.json').then(response => {
+      this.$http.get('/demo-statuses.json').then(response => {
         // Set app
         this.apps = response.body.apps;
       }, response => {
