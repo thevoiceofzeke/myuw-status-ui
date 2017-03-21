@@ -2,7 +2,6 @@
   <div id="app">
     <app-header></app-header>
     <h2>Apps</h2>
-    <!-- FOR EACH (grid of status cards) -->
     <grid-of-cards></grid-of-cards>
   </div>
 </template>
