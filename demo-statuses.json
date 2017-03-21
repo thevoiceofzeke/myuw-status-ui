@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "STAR",
+      "status": 1
+    },
+    {
+      "name": "Academic Navigator",
+      "status": 0
+    },
+    {
+      "name": "Advising Gateway",
+      "status": 1
+    }
+  ]
+}
