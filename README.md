@@ -18,4 +18,4 @@ npm run build
 ### VueJS and dependencies docs
 
 - [VueJS 2.0 API Reference](https://vuejs.org/v2/api/)
-- [vue-loader docs]((http://vuejs.github.io/vue-loader)
+- [vue-loader docs](http://vuejs.github.io/vue-loader)
