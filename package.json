@@ -5,6 +5,7 @@
   "author": "zeke-witter <david.witter@wisc.edu>",
   "private": true,
   "scripts": {
+    "clean": "rm -rf node_modules",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
