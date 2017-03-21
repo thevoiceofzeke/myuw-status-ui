@@ -2,15 +2,28 @@
   "apps": [
     {
       "name": "STAR",
-      "status": 1
+      "status": "up",
+      "url": "http://google.com"
     },
     {
       "name": "Academic Navigator",
-      "status": 0
+      "status": 0,
+      "url": "http://google.com"
     },
     {
       "name": "Advising Gateway",
-      "status": 1
+      "status": "up",
+      "url": "http://google.com"
+    },
+    {
+      "name": "Tools",
+      "status": 0,
+      "url": "http://tools.my.wisc.edu"
+    },
+    {
+      "name": "Outages",
+      "status": "up",
+      "url": "http://outages.doit.wisc.edu"
     }
   ]
 }

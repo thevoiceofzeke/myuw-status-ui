@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-## Build Setup
+## Build setup
 
 ``` bash
 # install dependencies
@@ -15,4 +15,11 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Dependencies docs
+
+- [VueJS 2.0 API Reference](https://vuejs.org/v2/api/)
+- [vue-loader docs](http://vuejs.github.io/vue-loader)
+
+## Browser Support
+
+This app uses the new CSS Grid Layout for its responsive grid. [See supported browsers](http://caniuse.com/#feat=css-grid).

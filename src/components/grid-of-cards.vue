@@ -1,24 +1,44 @@
 <template>
   <div class="margin-side">
     <div class="grid-wrapper">
-      <!-- FOR EACH "status" ITEM, CREATE A GRID ITEM -->
-      <div class="grid-item">A</div>
-      <div class="grid-item">B</div>
-      <div class="grid-item">C</div>
-      <!-- GRID ITEMS SHOULD CONTAIN <status-card> DIRECTIVE -->
+      <status-card v-for="app in apps" :app="app" :key="app.name"></status-card>
     </div>
   </div>
 </template>
 
 <script>
-// GET A BUNCH OF "status" JSON ITEMS
+// Import Vue to allow use of vue-resource for http.get
+// and import status-card for passing data to child compnent
+import Vue from 'vue'
+import StatusCard from './status-card.vue'
 
 // PASS DATA TO CHILD COMPONENT (status-card)
 export default {
+  components: { StatusCard },
   name: 'grid-of-cards',
   data () {
     return {
-      msg: 'WHAT WHAT'
+      apps: []
+    }
+  },
+  created: function() {
+    // var vm = this;
+    // Get app statuses on load
+    this.getStatuses();
+  },
+  methods: {
+    // Gets app statuses from /status endpoints
+    //   TODO: Should move to status-card and call once for each card, based on a
+    //   JSON file of apps and their /status urls
+    getStatuses: function() {
+      // var vm = this;
+      this.$http.get('/demo-statuses.json').then(response => {
+        // Set app
+        this.apps = response.body.apps;
+      }, response => {
+        // Error
+        console.error('Something went wrong');
+      })
     }
   }
 }
@@ -30,14 +50,17 @@ export default {
 
   .grid-wrapper {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-gap: 10px;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: 15px;
     justify-content: center;
 
-    .grid-item {
-      background-color: #f7f7f7;
-      padding: 10px;
-      font-size: 150%;
+    @media (min-width: 615px) {
+      grid-template-columns: 300px 300px;
+    }
+
+    @media (min-width: 938px) {
+      grid-template-columns: 300px 300px 300px;
     }
   }
 }
