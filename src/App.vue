@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>MyUW Status</h1>
+    <app-header></app-header>
     <h2>Apps</h2>
     <!-- FOR EACH (grid of status cards) -->
     <grid-of-cards></grid-of-cards>
@@ -8,11 +8,12 @@
 </template>
 
 <script>
-// Get grid component
+// Get child components
+import AppHeader from './components/app-header.vue'
 import GridOfCards from './components/grid-of-cards.vue'
 
 export default {
-  components: { GridOfCards },
+  components: { AppHeader, GridOfCards },
   name: 'app',
   data () {
     return {}
@@ -21,16 +22,20 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  min-width: 300
 }
 
-h1, h2 {
+h2 {
   font-weight: normal;
   text-align: center;
+  font-size: 2em;
 }
 </style>
