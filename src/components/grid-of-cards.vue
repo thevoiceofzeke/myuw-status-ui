@@ -22,21 +22,22 @@ export default {
     }
   },
   created: function() {
-    var vm = this;
+    // var vm = this;
     // Get app statuses on load
-    vm.getStatuses();
+    this.getStatuses();
   },
   methods: {
     // Gets app statuses from /status endpoints
     //   TODO: Should move to status-card and call once for each card, based on a
     //   JSON file of apps and their /status urls
     getStatuses: function() {
-      var vm = this;
-      vm.$http.get('http://localhost:8080/demo-statuses.json').then(response => {
+      // var vm = this;
+      this.$http.get('http://localhost:8080/demo-statuses.json').then(response => {
         // Set app
-        vm.apps = response.body.apps;
+        this.apps = response.body.apps;
       }, response => {
         // Error
+        console.error('Something went wrong');
       })
     }
   }

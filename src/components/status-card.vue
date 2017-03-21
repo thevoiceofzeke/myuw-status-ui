@@ -3,7 +3,7 @@
     <div class="status-app">
       <h3>{{ app.name }}</h3>
     </div>
-    <div class="status-image status-ok" v-if="app.status === 1">
+    <div class="status-image status-ok" v-if="app.status === 'up'">
       <img src="../assets/img/check.png">
     </div>
     <div class="status-image status-error" v-else>
